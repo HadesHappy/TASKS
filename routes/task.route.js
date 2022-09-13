@@ -21,18 +21,17 @@ router.route('/create-task').post((req, res, next) => {
 router.route('/').get((req, res) => {
     taskSchema.find((error, data) => {
         if (error) {
-            console.log("no data")
             return next(error)
         } else {
-            
+
             res.json(data)
         }
     })
 })
 // GET Single Task
-router.route('/edit-task/:id').get((req, res) => {
+router.route('/get-task/:id').get((req, res) => {
     taskSchema.findById(req.params.id, (error, data) => {
-        if (error) {
+        if (error || !data) {
             return next(error)
         } else {
             res.json(data)
@@ -56,7 +55,7 @@ router.route('/update-task/:id').put((req, res, next) => {
 // DELETE Task
 router.route('/delete-task/:id').delete((req, res, next) => {
     taskSchema.findByIdAndRemove(req.params.id, (error, data) => {
-        if (error) {
+        if (error || !data) {
             return next(error);
         } else {
             res.status(200).json({
