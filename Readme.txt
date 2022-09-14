@@ -1,6 +1,13 @@
-1. Download and Install Python3
+##I used node.js for designing backend apis and used python for command instructions.
+##And for unit test, jest is used.
+How to run the project
+1. Type npm install to download node modules.
 
-2. Following are the example scripts for CRUD operation
+2. Type npm start to run the server.
+
+3. Download and Install Python3
+
+4. Following are the example scripts for CRUD operation
 
     # To add task:
         python script.py add --title "This is title" --expire-on "2022-09-13"
@@ -15,3 +22,7 @@
     
     # To Delete a task with specific id:
         python script.py delete --task-id 632012c8162ca329b4194adb
+        
+ 5. For unit test, type npm test.
+ 
+ Thanks.
